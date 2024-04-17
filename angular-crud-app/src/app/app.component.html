@@ -1,0 +1,16 @@
+<div style="text-align: center;">
+  <h1>Welcome to My Angular App!</h1>
+</div>
+
+<div *ngIf="categories.length > 0; else loading">
+  <h2>Categories</h2>
+  <ul>
+    <li *ngFor="let category of categories">
+      <strong>{{ category.name }}</strong> - {{ category.description }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #loading>
+  <p>Loading categories...</p>
+</ng-template>

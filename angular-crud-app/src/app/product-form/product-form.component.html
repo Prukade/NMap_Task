@@ -1,0 +1,19 @@
+<!-- <p>product-form works!</p> -->
+<h2>{{ product ? 'Edit Product' : 'Add Product' }}</h2>
+<form [formGroup]="productForm" (submit)="onSubmit()">
+    <div>
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" formControlName="ProductName">
+        <div *ngIf="productForm.get('ProductName').invalid && productForm.get('ProductName').touched">
+            Product Name is required
+        </div>
+    </div>
+    <div>
+        <label for="categoryId">Category ID:</label>
+        <input type="number" id="categoryId" formControlName="CategoryId">
+        <div *ngIf="productForm.get('CategoryId').invalid && productForm.get('CategoryId').touched">
+            Category ID is required
+        </div>
+    </div>
+    <button type="submit">{{ product ? 'Update' : 'Add' }}</button>
+</form>

@@ -1,0 +1,23 @@
+<!-- <p>category-list works!</p>
+<h2>Category List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Category ID</th>
+            <th>Category Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categories">
+            <td>{{ category.CategoryId }}</td>
+            <td>{{ category.CategoryName }}</td>
+        </tr>
+    </tbody>
+</table> -->
+
+<h2>Category List</h2>
+<ul>
+    <li *ngFor="let category of categories">
+        {{ category.name }}
+    </li>
+</ul>

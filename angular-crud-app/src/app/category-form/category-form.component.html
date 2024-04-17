@@ -1,0 +1,11 @@
+<h2>{{ category ? 'Edit Category' : 'Add Category' }}</h2>
+<form [formGroup]="categoryForm" (submit)="onSubmit()">
+    <div>
+        <label for="categoryName">Category Name:</label>
+        <input type="text" id="categoryName" formControlName="CategoryName">
+        <div *ngIf="categoryForm.get('CategoryName').invalid && categoryForm.get('CategoryName').touched">
+            Category Name is required
+        </div>
+    </div>
+    <button type="submit">{{ category ? 'Update' : 'Add' }}</button>
+</form>

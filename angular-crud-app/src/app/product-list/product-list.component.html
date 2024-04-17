@@ -1,0 +1,25 @@
+<h2>Product List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Category ID</th>
+            <th>Category Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{ product.ProductId }}</td>
+            <td>{{ product.ProductName }}</td>
+            <td>{{ product.CategoryId }}</td>
+            <td>{{ product.CategoryName }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>{{ currentPage }}</span>
+    <button (click)="onPageChange(currentPage + 1)">Next</button>
+</div>
